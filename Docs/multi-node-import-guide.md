@@ -27,29 +27,28 @@ node engine/scripts/figma-extractor.mjs \
 
 ---
 
-### Method B: Extraction Manifest File (`docs/specs/import-manifest.json`)
-Define an import manifest mapping each Figma Frame ID to a target Next.js page route:
+### Method B: Extraction Manifest with Direct Figma URLs (`docs/specs/import-manifest.json`)
+You can simply copy and paste the **exact Figma URLs** from the browser/Figma app. The toolchain automatically parses the `fileKey` and `node-id` (handling `%3A` and `:` conversions):
 
 ```json
 {
-  "figmaFileKey": "mP1jK3jXw_furniro_design",
   "screens": [
     {
-      "nodeId": "117:346",
+      "url": "https://www.figma.com/design/mP1jK3jXw/Furniro-Design-System?node-id=117-346",
       "name": "Landing Page",
       "targetRoute": "/",
       "targetPageFile": "src/app/page.tsx",
       "modulesDir": "src/components/modules/home"
     },
     {
-      "nodeId": "118:502",
+      "url": "https://www.figma.com/design/mP1jK3jXw/Furniro-Design-System?node-id=118-502",
       "name": "Shop Catalog",
       "targetRoute": "/shop",
       "targetPageFile": "src/app/shop/page.tsx",
       "modulesDir": "src/components/modules/shop"
     },
     {
-      "nodeId": "119:120",
+      "url": "https://www.figma.com/design/mP1jK3jXw/Furniro-Design-System?node-id=119-120",
       "name": "Shopping Cart",
       "targetRoute": "/cart",
       "targetPageFile": "src/app/cart/page.tsx",
@@ -57,6 +56,16 @@ Define an import manifest mapping each Figma Frame ID to a target Next.js page r
     }
   ]
 }
+```
+
+---
+
+### Method C: Single Command with Multiple Direct Figma URLs
+Pass complete Figma URLs directly in your terminal command:
+
+```bash
+node engine/scripts/figma-extractor.mjs \
+  --urls="https://www.figma.com/design/mP1jK3jXw/Furniro?node-id=117-346,https://www.figma.com/design/mP1jK3jXw/Furniro?node-id=118-502"
 ```
 
 Then run the extraction pipeline with one command:
@@ -85,24 +94,63 @@ import fs from "fs";
 import path from "path";
 
 /**
+ * Parses a Figma URL into fileKey and nodeId
+ * Handles:
+ * - https://www.figma.com/design/:key/:title?node-id=117-346
+ * - https://www.figma.com/file/:key/:title?node-id=117%3A346
+ */
+export function parseFigmaUrl(url) {
+  try {
+    const parsed = new URL(url);
+    const pathSegments = parsed.pathname.split("/").filter(Boolean);
+    // Path format: /design/:fileKey/:title or /file/:fileKey/:title
+    const fileKeyIndex = pathSegments.findIndex((s) => s === "design" || s === "file");
+    const fileKey = fileKeyIndex !== -1 ? pathSegments[fileKeyIndex + 1] : null;
+
+    let nodeId = parsed.searchParams.get("node-id");
+    if (nodeId) {
+      // Normalize hyphen or %3A into standard Figma colon (e.g., 117-346 -> 117:346)
+      nodeId = decodeURIComponent(nodeId).replace("-", ":");
+    }
+
+    return { fileKey, nodeId };
+  } catch (err) {
+    return { fileKey: null, nodeId: null };
+  }
+}
+
+/**
  * Batch multi-node extraction runner
  */
-async function extractMultipleNodes({ fileKey, nodeIds = [], manifestPath }) {
+async function extractMultipleNodes({ fileKey, nodeIds = [], urls = [], manifestPath }) {
   const figmaToken = process.env.FIGMA_ACCESS_TOKEN;
   if (!figmaToken) {
     console.error("Error: FIGMA_ACCESS_TOKEN is required.");
     process.exit(1);
   }
 
-  let nodesToFetch = nodeIds;
-  let manifest = null;
+  let screensToProcess = [];
 
-  // 1. Read manifest if provided
+  // 1. Process from URLs or Manifest
   if (manifestPath && fs.existsSync(manifestPath)) {
-    manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
-    fileKey = fileKey || manifest.figmaFileKey;
-    nodesToFetch = manifest.screens.map((s) => s.nodeId);
+    const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
+    for (const screen of manifest.screens) {
+      if (screen.url) {
+        const parsed = parseFigmaUrl(screen.url);
+        screensToProcess.push({ ...screen, ...parsed });
+      } else {
+        screensToProcess.push(screen);
+      }
+    }
+  } else if (urls.length > 0) {
+    screensToProcess = urls.map((u) => parseFigmaUrl(u));
+  } else {
+    screensToProcess = nodeIds.map((id) => ({ fileKey, nodeId: id }));
   }
+
+  // Group by fileKey
+  const targetFileKey = fileKey || screensToProcess[0]?.fileKey;
+  const nodesToFetch = screensToProcess.map((s) => s.nodeId).filter(Boolean);
 
   console.log(`[Batch-Extractor] Fetching ${nodesToFetch.length} nodes from file: ${fileKey}`);
   console.log(`[Batch-Extractor] Node IDs: ${nodesToFetch.join(", ")}`);
