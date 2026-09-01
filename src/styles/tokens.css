@@ -1,0 +1,59 @@
+/* src/styles/tokens.css */
+:root {
+  /* ==========================================================================
+     Surface & Backgrounds (Extracted from Furniro Landing Page)
+     ========================================================================== */
+  --bg-app: #FFFFFF;
+  --bg-surface: #FFFFFF;
+  --bg-surface-subtle: #F9F1E7;    /* Hero & Feature badge card background */
+  --bg-surface-muted: #F4F5F7;     /* Product card background */
+  --bg-surface-dark: #3A3A3A;
+  --bg-footer: #FFFFFF;
+
+  /* ==========================================================================
+     Text & Foregrounds (Poppins font family scales)
+     ========================================================================== */
+  --text-primary: #333333;         /* Main brand heading and titles */
+  --text-secondary: #666666;       /* Subtitles and body descriptions */
+  --text-muted: #898989;           /* Secondary pricing & captions */
+  --text-inverse: #FFFFFF;
+  --text-gold: #B88E2F;            /* Highlighted text / eyebrow */
+
+  /* ==========================================================================
+     Brand / Action Colors
+     ========================================================================== */
+  --color-primary: #B88E2F;        /* Gold/Bronze Primary CTA */
+  --color-primary-hover: #9F7622;
+  --color-primary-subtle: #FFF3E3;
+
+  /* ==========================================================================
+     Product Badges & Feedback
+     ========================================================================== */
+  --badge-discount: #E97171;       /* e.g. -30%, -50% */
+  --badge-new: #2EC1AC;            /* e.g. New */
+  --color-success: #2EC1AC;
+  --color-error: #E97171;
+  --color-warning: #B88E2F;
+
+  /* ==========================================================================
+     Borders & Dividers
+     ========================================================================== */
+  --border-default: #E8E8E8;
+  --border-subtle: #D9D9D9;
+  --border-focus: #B88E2F;
+
+  /* ==========================================================================
+     Radii
+     ========================================================================== */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  /* ==========================================================================
+     Elevation & Shadows
+     ========================================================================== */
+  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.08), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-card: 0 8px 24px -4px rgb(0 0 0 / 0.08);
+}

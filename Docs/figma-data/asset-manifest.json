@@ -1,0 +1,464 @@
+{
+  "117:347": {
+    "name": "vector",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-117-347.svg",
+    "publicPath": "/figma-assets/icons/vector-117-347.svg"
+  },
+  "117:349": {
+    "name": "vector",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-117-349.svg",
+    "publicPath": "/figma-assets/icons/vector-117-349.svg"
+  },
+  "117:351": {
+    "name": "vector",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-117-351.svg",
+    "publicPath": "/figma-assets/icons/vector-117-351.svg"
+  },
+  "117:353": {
+    "name": "vector",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-117-353.svg",
+    "publicPath": "/figma-assets/icons/vector-117-353.svg"
+  },
+  "117:355": {
+    "name": "meubel-house_logos-05",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/meubel-house_logos-05-117-355.svg",
+    "publicPath": "/figma-assets/icons/meubel-house_logos-05-117-355.svg"
+  },
+  "I117:449;117:439": {
+    "name": "vector",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-I117-449-117-439.svg",
+    "publicPath": "/figma-assets/icons/vector-I117-449-117-439.svg"
+  },
+  "I117:449;117:444": {
+    "name": "vector",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-I117-449-117-444.svg",
+    "publicPath": "/figma-assets/icons/vector-I117-449-117-444.svg"
+  },
+  "I117:449;117:447;7677:9": {
+    "name": "vector",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-I117-449-117-447-7677-9.svg",
+    "publicPath": "/figma-assets/icons/vector-I117-449-117-447-7677-9.svg"
+  },
+  "117:466": {
+    "name": "vector-1",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-1-117-466.svg",
+    "publicPath": "/figma-assets/icons/vector-1-117-466.svg"
+  },
+  "117:471": {
+    "name": "vector-1",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/vector-1-117-471.svg",
+    "publicPath": "/figma-assets/icons/vector-1-117-471.svg"
+  },
+  "I117:485;1:77": {
+    "name": "line",
+    "format": "svg",
+    "localPath": "public/figma-assets/icons/line-I117-485-1-77.svg",
+    "publicPath": "/figma-assets/icons/line-I117-485-1-77.svg"
+  },
+  "117:361": {
+    "name": "scandinavian-interior-mockup-wall-decal-background-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/scandinavian-interior-mockup-wall-decal-background-1-117-361.png",
+    "publicPath": "/figma-assets/images/scandinavian-interior-mockup-wall-decal-background-1-117-361.png"
+  },
+  "117:376": {
+    "name": "image-81",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-81-117-376.png",
+    "publicPath": "/figma-assets/images/image-81-117-376.png"
+  },
+  "117:377": {
+    "name": "image-106",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-106-117-377.png",
+    "publicPath": "/figma-assets/images/image-106-117-377.png"
+  },
+  "117:381": {
+    "name": "image-76",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-76-117-381.png",
+    "publicPath": "/figma-assets/images/image-76-117-381.png"
+  },
+  "117:382": {
+    "name": "image-99",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-99-117-382.png",
+    "publicPath": "/figma-assets/images/image-99-117-382.png"
+  },
+  "117:383": {
+    "name": "image-100",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-100-117-383.png",
+    "publicPath": "/figma-assets/images/image-100-117-383.png"
+  },
+  "117:387": {
+    "name": "image-82",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-82-117-387.png",
+    "publicPath": "/figma-assets/images/image-82-117-387.png"
+  },
+  "117:388": {
+    "name": "image-101",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-101-117-388.png",
+    "publicPath": "/figma-assets/images/image-101-117-388.png"
+  },
+  "117:410": {
+    "name": "image-8",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-8-117-410.png",
+    "publicPath": "/figma-assets/images/image-8-117-410.png"
+  },
+  "117:411": {
+    "name": "image-7",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-7-117-411.png",
+    "publicPath": "/figma-assets/images/image-7-117-411.png"
+  },
+  "117:412": {
+    "name": "image-6",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-6-117-412.png",
+    "publicPath": "/figma-assets/images/image-6-117-412.png"
+  },
+  "117:415": {
+    "name": "image-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-9-117-415.png",
+    "publicPath": "/figma-assets/images/image-9-117-415.png"
+  },
+  "117:416": {
+    "name": "image-4",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-4-117-416.png",
+    "publicPath": "/figma-assets/images/image-4-117-416.png"
+  },
+  "117:419": {
+    "name": "outdoor-bar-table-and-stool-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/outdoor-bar-table-and-stool-1-117-419.png",
+    "publicPath": "/figma-assets/images/outdoor-bar-table-and-stool-1-117-419.png"
+  },
+  "117:420": {
+    "name": "image-3",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-3-117-420.png",
+    "publicPath": "/figma-assets/images/image-3-117-420.png"
+  },
+  "117:421": {
+    "name": "image-2",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-2-117-421.png",
+    "publicPath": "/figma-assets/images/image-2-117-421.png"
+  },
+  "117:422": {
+    "name": "image-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-1-117-422.png",
+    "publicPath": "/figma-assets/images/image-1-117-422.png"
+  },
+  "I117:449;117:410": {
+    "name": "image-8",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-8-I117-449-117-410.png",
+    "publicPath": "/figma-assets/images/image-8-I117-449-117-410.png"
+  },
+  "I117:449;117:411": {
+    "name": "image-7",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-7-I117-449-117-411.png",
+    "publicPath": "/figma-assets/images/image-7-I117-449-117-411.png"
+  },
+  "I117:449;117:412": {
+    "name": "image-6",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-6-I117-449-117-412.png",
+    "publicPath": "/figma-assets/images/image-6-I117-449-117-412.png"
+  },
+  "I117:449;117:415": {
+    "name": "image-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-9-I117-449-117-415.png",
+    "publicPath": "/figma-assets/images/image-9-I117-449-117-415.png"
+  },
+  "I117:449;117:416": {
+    "name": "image-4",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-4-I117-449-117-416.png",
+    "publicPath": "/figma-assets/images/image-4-I117-449-117-416.png"
+  },
+  "I117:449;117:419": {
+    "name": "outdoor-bar-table-and-stool-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/outdoor-bar-table-and-stool-1-I117-449-117-419.png",
+    "publicPath": "/figma-assets/images/outdoor-bar-table-and-stool-1-I117-449-117-419.png"
+  },
+  "I117:449;117:420": {
+    "name": "image-3",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-3-I117-449-117-420.png",
+    "publicPath": "/figma-assets/images/image-3-I117-449-117-420.png"
+  },
+  "I117:449;117:421": {
+    "name": "image-2",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-2-I117-449-117-421.png",
+    "publicPath": "/figma-assets/images/image-2-I117-449-117-421.png"
+  },
+  "I117:450;117:410": {
+    "name": "image-8",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-8-I117-450-117-410.png",
+    "publicPath": "/figma-assets/images/image-8-I117-450-117-410.png"
+  },
+  "I117:450;117:411": {
+    "name": "image-7",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-7-I117-450-117-411.png",
+    "publicPath": "/figma-assets/images/image-7-I117-450-117-411.png"
+  },
+  "I117:450;117:412": {
+    "name": "image-6",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-6-I117-450-117-412.png",
+    "publicPath": "/figma-assets/images/image-6-I117-450-117-412.png"
+  },
+  "I117:450;117:415": {
+    "name": "image-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-9-I117-450-117-415.png",
+    "publicPath": "/figma-assets/images/image-9-I117-450-117-415.png"
+  },
+  "I117:450;117:416": {
+    "name": "image-4",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-4-I117-450-117-416.png",
+    "publicPath": "/figma-assets/images/image-4-I117-450-117-416.png"
+  },
+  "I117:450;117:419": {
+    "name": "outdoor-bar-table-and-stool-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/outdoor-bar-table-and-stool-1-I117-450-117-419.png",
+    "publicPath": "/figma-assets/images/outdoor-bar-table-and-stool-1-I117-450-117-419.png"
+  },
+  "I117:450;117:420": {
+    "name": "image-3",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-3-I117-450-117-420.png",
+    "publicPath": "/figma-assets/images/image-3-I117-450-117-420.png"
+  },
+  "I117:451;117:414": {
+    "name": "rectangle-14",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-14-I117-451-117-414.png",
+    "publicPath": "/figma-assets/images/rectangle-14-I117-451-117-414.png"
+  },
+  "I117:451;117:415": {
+    "name": "image-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-9-I117-451-117-415.png",
+    "publicPath": "/figma-assets/images/image-9-I117-451-117-415.png"
+  },
+  "I117:451;117:416": {
+    "name": "image-4",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-4-I117-451-117-416.png",
+    "publicPath": "/figma-assets/images/image-4-I117-451-117-416.png"
+  },
+  "I117:451;117:418": {
+    "name": "rectangle-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-9-I117-451-117-418.png",
+    "publicPath": "/figma-assets/images/rectangle-9-I117-451-117-418.png"
+  },
+  "I117:451;117:419": {
+    "name": "outdoor-bar-table-and-stool-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/outdoor-bar-table-and-stool-1-I117-451-117-419.png",
+    "publicPath": "/figma-assets/images/outdoor-bar-table-and-stool-1-I117-451-117-419.png"
+  },
+  "I117:453;117:410": {
+    "name": "image-8",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-8-I117-453-117-410.png",
+    "publicPath": "/figma-assets/images/image-8-I117-453-117-410.png"
+  },
+  "I117:453;117:411": {
+    "name": "image-7",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-7-I117-453-117-411.png",
+    "publicPath": "/figma-assets/images/image-7-I117-453-117-411.png"
+  },
+  "I117:453;117:412": {
+    "name": "image-6",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-6-I117-453-117-412.png",
+    "publicPath": "/figma-assets/images/image-6-I117-453-117-412.png"
+  },
+  "I117:453;117:415": {
+    "name": "image-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-9-I117-453-117-415.png",
+    "publicPath": "/figma-assets/images/image-9-I117-453-117-415.png"
+  },
+  "I117:453;117:419": {
+    "name": "outdoor-bar-table-and-stool-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/outdoor-bar-table-and-stool-1-I117-453-117-419.png",
+    "publicPath": "/figma-assets/images/outdoor-bar-table-and-stool-1-I117-453-117-419.png"
+  },
+  "I117:454;117:410": {
+    "name": "image-8",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-8-I117-454-117-410.png",
+    "publicPath": "/figma-assets/images/image-8-I117-454-117-410.png"
+  },
+  "I117:454;117:411": {
+    "name": "image-7",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-7-I117-454-117-411.png",
+    "publicPath": "/figma-assets/images/image-7-I117-454-117-411.png"
+  },
+  "I117:454;117:412": {
+    "name": "image-6",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-6-I117-454-117-412.png",
+    "publicPath": "/figma-assets/images/image-6-I117-454-117-412.png"
+  },
+  "I117:454;117:415": {
+    "name": "image-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-9-I117-454-117-415.png",
+    "publicPath": "/figma-assets/images/image-9-I117-454-117-415.png"
+  },
+  "I117:454;117:419": {
+    "name": "outdoor-bar-table-and-stool-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/outdoor-bar-table-and-stool-1-I117-454-117-419.png",
+    "publicPath": "/figma-assets/images/outdoor-bar-table-and-stool-1-I117-454-117-419.png"
+  },
+  "I117:455;117:410": {
+    "name": "image-8",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-8-I117-455-117-410.png",
+    "publicPath": "/figma-assets/images/image-8-I117-455-117-410.png"
+  },
+  "I117:455;117:411": {
+    "name": "image-7",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-7-I117-455-117-411.png",
+    "publicPath": "/figma-assets/images/image-7-I117-455-117-411.png"
+  },
+  "I117:455;117:415": {
+    "name": "image-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-9-I117-455-117-415.png",
+    "publicPath": "/figma-assets/images/image-9-I117-455-117-415.png"
+  },
+  "I117:455;117:419": {
+    "name": "outdoor-bar-table-and-stool-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/outdoor-bar-table-and-stool-1-I117-455-117-419.png",
+    "publicPath": "/figma-assets/images/outdoor-bar-table-and-stool-1-I117-455-117-419.png"
+  },
+  "I117:456;117:410": {
+    "name": "image-8",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-8-I117-456-117-410.png",
+    "publicPath": "/figma-assets/images/image-8-I117-456-117-410.png"
+  },
+  "I117:456;117:415": {
+    "name": "image-9",
+    "format": "png",
+    "localPath": "public/figma-assets/images/image-9-I117-456-117-415.png",
+    "publicPath": "/figma-assets/images/image-9-I117-456-117-415.png"
+  },
+  "I117:456;117:419": {
+    "name": "outdoor-bar-table-and-stool-1",
+    "format": "png",
+    "localPath": "public/figma-assets/images/outdoor-bar-table-and-stool-1-I117-456-117-419.png",
+    "publicPath": "/figma-assets/images/outdoor-bar-table-and-stool-1-I117-456-117-419.png"
+  },
+  "117:462": {
+    "name": "rectangle-24",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-24-117-462.png",
+    "publicPath": "/figma-assets/images/rectangle-24-117-462.png"
+  },
+  "117:474": {
+    "name": "rectangle-25",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-25-117-474.png",
+    "publicPath": "/figma-assets/images/rectangle-25-117-474.png"
+  },
+  "117:475": {
+    "name": "rectangle-26",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-26-117-475.png",
+    "publicPath": "/figma-assets/images/rectangle-26-117-475.png"
+  },
+  "117:495": {
+    "name": "rectangle-36",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-36-117-495.png",
+    "publicPath": "/figma-assets/images/rectangle-36-117-495.png"
+  },
+  "117:496": {
+    "name": "rectangle-38",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-38-117-496.png",
+    "publicPath": "/figma-assets/images/rectangle-38-117-496.png"
+  },
+  "117:497": {
+    "name": "rectangle-40",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-40-117-497.png",
+    "publicPath": "/figma-assets/images/rectangle-40-117-497.png"
+  },
+  "117:498": {
+    "name": "rectangle-39",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-39-117-498.png",
+    "publicPath": "/figma-assets/images/rectangle-39-117-498.png"
+  },
+  "117:499": {
+    "name": "rectangle-41",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-41-117-499.png",
+    "publicPath": "/figma-assets/images/rectangle-41-117-499.png"
+  },
+  "117:500": {
+    "name": "rectangle-44",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-44-117-500.png",
+    "publicPath": "/figma-assets/images/rectangle-44-117-500.png"
+  },
+  "117:501": {
+    "name": "rectangle-43",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-43-117-501.png",
+    "publicPath": "/figma-assets/images/rectangle-43-117-501.png"
+  },
+  "117:502": {
+    "name": "rectangle-45",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-45-117-502.png",
+    "publicPath": "/figma-assets/images/rectangle-45-117-502.png"
+  },
+  "117:503": {
+    "name": "rectangle-37",
+    "format": "png",
+    "localPath": "public/figma-assets/images/rectangle-37-117-503.png",
+    "publicPath": "/figma-assets/images/rectangle-37-117-503.png"
+  }
+}
