@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export function HeroBanner() {
   return (
-    <section className="relative w-full min-h-screen lg:min-h-[70vh] flex items-center justify-end bg-surface-muted"> // token-ignore
+    <section className="relative w-full min-h-screen lg:min-h-[70vh] flex items-center justify-end bg-surface-muted">
       {/* Background Graphic */}
       <div className="absolute inset-0 z-0">
         <Image

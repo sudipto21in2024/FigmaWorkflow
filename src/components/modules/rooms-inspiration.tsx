@@ -31,7 +31,7 @@ export function RoomsInspiration() {
               className="object-cover"
             />
             {/* token-ignore */}
-            <div className="absolute inset-x-6 bottom-6 bg-surface/90 backdrop-blur-sm p-4 rounded-sm // token-ignore">
+            <div className="absolute inset-x-6 bottom-6 bg-surface/90 backdrop-blur-sm p-4 rounded-sm">
               <span className="text-xs text-content-secondary">01 — Bed Room</span>
               <h3 className="text-lg font-bold text-content-primary">Inner Peace</h3>
             </div>

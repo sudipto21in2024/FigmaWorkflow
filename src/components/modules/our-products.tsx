@@ -1,5 +1,5 @@
 import React from "react";
-import { ProductCard, Product } from "./product-card";
+import { ProductCard, Product } from "@/components/shared/product-card";
 import { Button } from "@/components/ui/button";
 
 const SAMPLE_PRODUCTS: Product[] = [

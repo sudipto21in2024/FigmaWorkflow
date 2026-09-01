@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "version": "1.0.0",
+  "description": "Figma-to-Code Framework Component Registry. Maps Figma node definitions & component names to reusable React code modules.",
+  "components": {
+    "Header": {
+      "type": "shared",
+      "exportPath": "@/components/shared/header",
+      "figmaNames": ["Header", "Navigation", "Navbar", "TopBar"],
+      "figmaNodeIds": ["117:346", "117:347"],
+      "props": {}
+    },
+    "Footer": {
+      "type": "shared",
+      "exportPath": "@/components/shared/footer",
+      "figmaNames": ["Footer", "Bottom Navigation", "Site Footer"],
+      "figmaNodeIds": ["117:507"],
+      "props": {}
+    },
+    "ProductCard": {
+      "type": "shared",
+      "exportPath": "@/components/shared/product-card",
+      "figmaNames": ["Product Card", "Product Item", "Card/Product"],
+      "figmaNodeIds": ["117:422", "117:421", "117:420"],
+      "props": {
+        "id": "string",
+        "name": "string",
+        "categoryDesc": "string",
+        "price": "string",
+        "originalPrice": "string?",
+        "badge": "{ text: string, type: 'discount' | 'new' }?",
+        "imageSrc": "string"
+      }
+    },
+    "Button": {
+      "type": "ui",
+      "exportPath": "@/components/ui/button",
+      "figmaNames": ["Button", "CTA", "Btn/Primary", "Btn/Outline", "Btn/Secondary"],
+      "variants": ["primary", "secondary", "outline"],
+      "sizes": ["sm", "md", "lg"]
+    }
+  },
+  "routes": {
+    "/": {
+      "title": "Home Landing Page",
+      "modules": [
+        "@/components/modules/hero-banner",
+        "@/components/modules/category-range",
+        "@/components/modules/our-products",
+        "@/components/modules/rooms-inspiration",
+        "@/components/modules/share-section"
+      ]
+    },
+    "/shop": {
+      "title": "Shop Catalog Page",
+      "modules": [
+        "@/components/modules/shop/shop-hero",
+        "@/components/modules/shop/shop-filter-bar",
+        "@/components/modules/shop/shop-product-grid"
+      ]
+    }
+  }
+}
