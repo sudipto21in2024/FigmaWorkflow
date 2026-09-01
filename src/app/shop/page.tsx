@@ -1,6 +1,7 @@
 import { ShopHero } from "@/components/modules/shop/shop-hero";
 import { ShopFilterBar } from "@/components/modules/shop/shop-filter-bar";
 import { ShopProductGrid } from "@/components/modules/shop/shop-product-grid";
+import { FeaturesBenefitsBar } from "@/components/shared/features-benefits-bar";
 
 export const metadata = {
   title: "Shop - Furniro",
@@ -13,6 +14,7 @@ export default function ShopPage() {
       <ShopHero />
       <ShopFilterBar />
       <ShopProductGrid />
+      <FeaturesBenefitsBar />
     </main>
   );
 }
