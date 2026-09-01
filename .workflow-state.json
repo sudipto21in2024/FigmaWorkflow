@@ -1,30 +1,40 @@
 {
-  "workflowId": "wf-1788277364590",
+  "workflowId": "wf-1788277844015",
   "status": "COMPLETED",
-  "createdAt": "2026-09-01T15:42:44.590Z",
-  "lastUpdated": "2026-09-01T15:44:17.825Z",
+  "createdAt": "2026-09-01T15:50:44.015Z",
+  "lastUpdated": "2026-09-01T15:51:00.093Z",
   "manifest": {
-    "fileKey": "mP1jK3jXw_furniro_design",
+    "fileKey": "o0V6sUJgg0iLQtWfMBbhoE",
     "fileName": "Furniro Interior Design System",
     "screens": [
       {
-        "nodeId": "117:346",
-        "url": "https://www.figma.com/design/mP1jK3jXw/Furniro?node-id=117-346",
-        "name": "Landing Page",
+        "nodeId": "117:336",
+        "url": "https://www.figma.com/design/o0V6sUJgg0iLQtWfMBbhoE/eCommerce-Website-%7C-Web-Page-Design-%7C-UI-KIT-%7C-Interior-Landing-Page--Community-?node-id=117-336&t=JXUL1Oi3wdW4YMU3-0",
+        "name": "Home",
         "targetRoute": "/",
         "targetPageFile": "src/app/page.tsx",
         "modulesDir": "src/components/modules/home",
-        "specFile": "docs/specs/spec-landing-page.json",
+        "specFile": "docs/specs/spec-home.json",
         "status": "GENERATED"
       },
       {
-        "nodeId": "118:502",
-        "url": "https://www.figma.com/design/mP1jK3jXw/Furniro?node-id=118-502",
+        "nodeId": "117:538",
+        "url": "https://www.figma.com/design/o0V6sUJgg0iLQtWfMBbhoE/eCommerce-Website-%7C-Web-Page-Design-%7C-UI-KIT-%7C-Interior-Landing-Page--Community-?node-id=117-538&t=JXUL1Oi3wdW4YMU3-0",
         "name": "Shop Catalog",
         "targetRoute": "/shop",
         "targetPageFile": "src/app/shop/page.tsx",
         "modulesDir": "src/components/modules/shop",
         "specFile": "docs/specs/spec-shop-catalog.json",
+        "status": "GENERATED"
+      },
+      {
+        "nodeId": "117:818",
+        "url": "https://www.figma.com/design/o0V6sUJgg0iLQtWfMBbhoE/eCommerce-Website-%7C-Web-Page-Design-%7C-UI-KIT-%7C-Interior-Landing-Page--Community-?node-id=117-818&t=JXUL1Oi3wdW4YMU3-0",
+        "name": "SingleProducts",
+        "targetRoute": "/product/1",
+        "targetPageFile": "src/app/product/1/page.tsx",
+        "modulesDir": "src/components/modules/product",
+        "specFile": "docs/specs/spec-singleproducts.json",
         "status": "GENERATED"
       }
     ]
@@ -35,13 +45,14 @@
       "title": "Figma URL & Manifest Parsing",
       "status": "COMPLETED",
       "outputs": {
-        "screensParsed": 2,
+        "screensParsed": 3,
         "nodeIds": [
-          "117:346",
-          "118:502"
+          "117:336",
+          "117:538",
+          "117:818"
         ]
       },
-      "completedAt": "2026-09-01T15:42:44.593Z"
+      "completedAt": "2026-09-01T15:50:44.412Z"
     },
     "step-2-extract-tokens": {
       "id": "step-2-extract-tokens",
@@ -51,7 +62,7 @@
         "tokenFile": "src/styles/tokens.css",
         "verified": true
       },
-      "completedAt": "2026-09-01T15:42:44.593Z"
+      "completedAt": "2026-09-01T15:50:44.413Z"
     },
     "step-3-sync-assets": {
       "id": "step-3-sync-assets",
@@ -62,7 +73,7 @@
         "activeAssetsKept": 23,
         "unusedAssetsPurged": 0
       },
-      "completedAt": "2026-09-01T15:42:44.599Z"
+      "completedAt": "2026-09-01T15:50:44.420Z"
     },
     "step-4-generate-code": {
       "id": "step-4-generate-code",
@@ -80,7 +91,7 @@
           "/shop"
         ]
       },
-      "completedAt": "2026-09-01T15:42:44.601Z"
+      "completedAt": "2026-09-01T15:50:44.423Z"
     },
     "step-5-validate-build": {
       "id": "step-5-validate-build",
@@ -89,7 +100,7 @@
       "outputs": {
         "buildPassed": true
       },
-      "completedAt": "2026-09-01T15:42:58.454Z"
+      "completedAt": "2026-09-01T15:50:59.941Z"
     },
     "step-6-export-client": {
       "id": "step-6-export-client",
@@ -99,7 +110,7 @@
         "exportDir": "dist-client",
         "status": "READY"
       },
-      "completedAt": "2026-09-01T15:42:58.601Z"
+      "completedAt": "2026-09-01T15:51:00.092Z"
     }
   }
 }

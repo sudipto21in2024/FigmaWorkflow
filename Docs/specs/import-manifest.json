@@ -1,0 +1,29 @@
+{
+  "figmaFileKey": "o0V6sUJgg0iLQtWfMBbhoE",
+  "screens": [
+    {
+      "url": "https://www.figma.com/design/o0V6sUJgg0iLQtWfMBbhoE/eCommerce-Website-%7C-Web-Page-Design-%7C-UI-KIT-%7C-Interior-Landing-Page--Community-?node-id=117-336&t=JXUL1Oi3wdW4YMU3-0",
+      "nodeId": "117:336",
+      "name": "Home",
+      "targetRoute": "/",
+      "targetPageFile": "src/app/page.tsx",
+      "modulesDir": "src/components/modules/home"
+    },
+    {
+      "url": "https://www.figma.com/design/o0V6sUJgg0iLQtWfMBbhoE/eCommerce-Website-%7C-Web-Page-Design-%7C-UI-KIT-%7C-Interior-Landing-Page--Community-?node-id=117-538&t=JXUL1Oi3wdW4YMU3-0",
+      "nodeId": "117:538",
+      "name": "Shop Catalog",
+      "targetRoute": "/shop",
+      "targetPageFile": "src/app/shop/page.tsx",
+      "modulesDir": "src/components/modules/shop"
+    },
+    {
+      "url": "https://www.figma.com/design/o0V6sUJgg0iLQtWfMBbhoE/eCommerce-Website-%7C-Web-Page-Design-%7C-UI-KIT-%7C-Interior-Landing-Page--Community-?node-id=117-818&t=JXUL1Oi3wdW4YMU3-0",
+      "nodeId": "117:818",
+      "name": "SingleProducts",
+      "targetRoute": "/product/1",
+      "targetPageFile": "src/app/product/1/page.tsx",
+      "modulesDir": "src/components/modules/product"
+    }
+  ]
+}
