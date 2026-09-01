@@ -1,0 +1,105 @@
+{
+  "workflowId": "wf-1788277364590",
+  "status": "COMPLETED",
+  "createdAt": "2026-09-01T15:42:44.590Z",
+  "lastUpdated": "2026-09-01T15:44:17.825Z",
+  "manifest": {
+    "fileKey": "mP1jK3jXw_furniro_design",
+    "fileName": "Furniro Interior Design System",
+    "screens": [
+      {
+        "nodeId": "117:346",
+        "url": "https://www.figma.com/design/mP1jK3jXw/Furniro?node-id=117-346",
+        "name": "Landing Page",
+        "targetRoute": "/",
+        "targetPageFile": "src/app/page.tsx",
+        "modulesDir": "src/components/modules/home",
+        "specFile": "docs/specs/spec-landing-page.json",
+        "status": "GENERATED"
+      },
+      {
+        "nodeId": "118:502",
+        "url": "https://www.figma.com/design/mP1jK3jXw/Furniro?node-id=118-502",
+        "name": "Shop Catalog",
+        "targetRoute": "/shop",
+        "targetPageFile": "src/app/shop/page.tsx",
+        "modulesDir": "src/components/modules/shop",
+        "specFile": "docs/specs/spec-shop-catalog.json",
+        "status": "GENERATED"
+      }
+    ]
+  },
+  "steps": {
+    "step-1-parse-urls": {
+      "id": "step-1-parse-urls",
+      "title": "Figma URL & Manifest Parsing",
+      "status": "COMPLETED",
+      "outputs": {
+        "screensParsed": 2,
+        "nodeIds": [
+          "117:346",
+          "118:502"
+        ]
+      },
+      "completedAt": "2026-09-01T15:42:44.593Z"
+    },
+    "step-2-extract-tokens": {
+      "id": "step-2-extract-tokens",
+      "title": "Design Token Extraction",
+      "status": "COMPLETED",
+      "outputs": {
+        "tokenFile": "src/styles/tokens.css",
+        "verified": true
+      },
+      "completedAt": "2026-09-01T15:42:44.593Z"
+    },
+    "step-3-sync-assets": {
+      "id": "step-3-sync-assets",
+      "title": "Shared Assets Download & Deduplication",
+      "status": "COMPLETED",
+      "outputs": {
+        "totalAssets": 23,
+        "activeAssetsKept": 23,
+        "unusedAssetsPurged": 0
+      },
+      "completedAt": "2026-09-01T15:42:44.599Z"
+    },
+    "step-4-generate-code": {
+      "id": "step-4-generate-code",
+      "title": "Component Registry & Multi-Page Code Generation",
+      "status": "COMPLETED",
+      "outputs": {
+        "registeredComponents": [
+          "Header",
+          "Footer",
+          "ProductCard",
+          "Button"
+        ],
+        "activeRoutes": [
+          "/",
+          "/shop"
+        ]
+      },
+      "completedAt": "2026-09-01T15:42:44.601Z"
+    },
+    "step-5-validate-build": {
+      "id": "step-5-validate-build",
+      "title": "Production Build & Visual Validation",
+      "status": "COMPLETED",
+      "outputs": {
+        "buildPassed": true
+      },
+      "completedAt": "2026-09-01T15:42:58.454Z"
+    },
+    "step-6-export-client": {
+      "id": "step-6-export-client",
+      "title": "Standalone Client Export & Asset Tree-Shaking",
+      "status": "COMPLETED",
+      "outputs": {
+        "exportDir": "dist-client",
+        "status": "READY"
+      },
+      "completedAt": "2026-09-01T15:42:58.601Z"
+    }
+  }
+}
