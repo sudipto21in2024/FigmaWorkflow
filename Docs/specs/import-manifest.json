@@ -7,7 +7,10 @@
       "name": "Home",
       "targetRoute": "/",
       "targetPageFile": "src/app/page.tsx",
-      "modulesDir": "src/components/modules/home"
+      "modulesDir": "src/components/modules/home",
+      "changeType": "UNCHANGED",
+      "changeDescription": "Initial production generation",
+      "affectedScope": ["hero-banner", "category-range", "our-products", "rooms-inspiration", "share-section"]
     },
     {
       "url": "https://www.figma.com/design/o0V6sUJgg0iLQtWfMBbhoE/eCommerce-Website-%7C-Web-Page-Design-%7C-UI-KIT-%7C-Interior-Landing-Page--Community-?node-id=117-538&t=JXUL1Oi3wdW4YMU3-0",
@@ -15,7 +18,10 @@
       "name": "Shop Catalog",
       "targetRoute": "/shop",
       "targetPageFile": "src/app/shop/page.tsx",
-      "modulesDir": "src/components/modules/shop"
+      "modulesDir": "src/components/modules/shop",
+      "changeType": "UNCHANGED",
+      "changeDescription": "Initial production generation",
+      "affectedScope": ["shop-hero", "shop-filter-bar", "shop-product-grid"]
     },
     {
       "url": "https://www.figma.com/design/o0V6sUJgg0iLQtWfMBbhoE/eCommerce-Website-%7C-Web-Page-Design-%7C-UI-KIT-%7C-Interior-Landing-Page--Community-?node-id=117-818&t=JXUL1Oi3wdW4YMU3-0",
@@ -23,7 +29,10 @@
       "name": "SingleProducts",
       "targetRoute": "/product/1",
       "targetPageFile": "src/app/product/1/page.tsx",
-      "modulesDir": "src/components/modules/product"
+      "modulesDir": "src/components/modules/product",
+      "changeType": "UNCHANGED",
+      "changeDescription": "Initial production generation",
+      "affectedScope": ["product-gallery", "product-info", "product-tabs", "related-products"]
     }
   ]
 }

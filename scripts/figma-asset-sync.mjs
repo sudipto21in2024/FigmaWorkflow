@@ -197,10 +197,56 @@ async function run() {
     const rawData = await fetchFigmaDocument(fileKey, nodeId);
 
     const rawDir = path.join(process.cwd(), "docs", "figma-data", "raw");
+    const snapshotDir = path.join(process.cwd(), "docs", "figma-data", "snapshots");
     fs.mkdirSync(rawDir, { recursive: true });
+    fs.mkdirSync(snapshotDir, { recursive: true });
+
+    // 1. Check for previous AST snapshot
     const rawPath = path.join(rawDir, `${tag}-ast.json`);
+    let previousAst = null;
+    if (fs.existsSync(rawPath)) {
+      try {
+        previousAst = JSON.parse(fs.readFileSync(rawPath, "utf-8"));
+      } catch {}
+    }
+
+    // 2. Save Timestamped Snapshot
+    const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+    const snapshotPath = path.join(snapshotDir, `${timestamp}_${tag}_ast.json`);
+    fs.writeFileSync(snapshotPath, JSON.stringify(rawData, null, 2));
     fs.writeFileSync(rawPath, JSON.stringify(rawData, null, 2));
-    console.log(`    ${colors.green}✔${colors.reset} Structural AST cached at: ${colors.dim}${rawPath}${colors.reset}`);
+    console.log(`    ${colors.green}✔${colors.reset} AST Snapshot saved at: ${colors.dim}${snapshotPath}${colors.reset}`);
+
+    // 3. Compute Delta if previous AST existed
+    if (previousAst) {
+      try {
+        const { diffAstSnapshots } = await import("../engine/scripts/ast-diff-engine.mjs");
+        const registryPath = path.join(process.cwd(), "engine", "registry", "component-registry.json");
+        const registry = fs.existsSync(registryPath) ? JSON.parse(fs.readFileSync(registryPath, "utf-8")) : null;
+        
+        const oldDoc = nodeId ? previousAst.nodes?.[nodeId]?.document : previousAst.document;
+        const newDoc = nodeId ? rawData.nodes?.[nodeId]?.document : rawData.document;
+        
+        if (oldDoc && newDoc) {
+          const delta = diffAstSnapshots(oldDoc, newDoc, registry);
+          const deltaDir = path.join(process.cwd(), "docs", "figma-data", "delta");
+          fs.mkdirSync(deltaDir, { recursive: true });
+          const deltaFilePath = path.join(deltaDir, `delta-${timestamp}-${tag}.json`);
+          fs.writeFileSync(deltaFilePath, JSON.stringify(delta, null, 2));
+
+          if (delta.summary.hasChanges) {
+            console.log(`    ${colors.yellow}⚡ Delta Detected:${colors.reset} ${delta.summary.totalModified} modified, ${delta.summary.totalAdded} added, ${delta.summary.totalRemoved} removed.`);
+            if (delta.affectedComponents.length > 0) {
+              console.log(`    ${colors.cyan}↳ Affected Components:${colors.reset} ${delta.affectedComponents.map((c) => c.component).join(", ")}`);
+            }
+          } else {
+            console.log(`    ${colors.dim}↳ No structural AST changes detected compared to previous snapshot.${colors.reset}`);
+          }
+        }
+      } catch (diffErr) {
+        console.warn(`    ${colors.dim}Note: AST diff check skipped: ${diffErr.message}${colors.reset}`);
+      }
+    }
 
     printStep(3, 4, "Scanning AST for Vector Icons and Raster Images", "Collecting candidate nodes...");
     const rootNode = nodeId ? rawData.nodes[nodeId]?.document : rawData.document;

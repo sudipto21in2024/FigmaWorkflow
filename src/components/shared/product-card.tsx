@@ -18,9 +18,13 @@ export interface Product {
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <div className="group relative bg-surface-muted rounded-none overflow-hidden flex flex-col transition-all duration-300">
+    <div
+      data-node-id="117:422"
+      data-figma-name="Product Card"
+      className="group relative bg-surface-muted rounded-none overflow-hidden flex flex-col transition-all duration-300"
+    >
       {/* Product Image & Badge */}
-      <div className="relative w-full h-72 overflow-hidden">
+      <div data-node-id="117:423" className="relative w-full h-72 overflow-hidden">
         <Image
           src={product.imageSrc}
           alt={product.name}

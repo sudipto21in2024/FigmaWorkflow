@@ -39,11 +39,13 @@ export async function exportClient({ outDir = "dist-client", createZip = false }
       }
     } else {
       let content = fs.readFileSync(src, "utf-8");
-      // Sanitize engine comments (e.g. // token-ignore)
+      // Sanitize engine comments and data-node-id / data-figma attributes
       if (/\.(tsx|ts|jsx|js|css)$/i.test(src)) {
         content = content
           .replace(/\/\/\s*token-ignore[^\n]*/g, "")
-          .replace(/\/\*\s*figma-node-[^*]*\*\//g, "");
+          .replace(/\/\*\s*figma-node-[^*]*\*\//g, "")
+          .replace(/\s*data-node-id="[^"]*"/g, "")
+          .replace(/\s*data-figma-[a-zA-Z0-9_-]+="[^"]*"/g, "");
       }
       fs.writeFileSync(dest, content);
     }
