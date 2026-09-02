@@ -9,7 +9,7 @@
 
 ```mermaid
 flowchart LR
-    A["1. Auto Layout (Shift+A)<br/>(Flexbox / Grid)"] --> B["2. Micro-Annotation Protocol<br/>([tag:h1], [tag:button])"]
+    A["1. Auto Layout (Shift+A)<br/>(Flexbox / Grid)"] --> B["2. Micro-Annotation Protocol<br/>([tag:...], [action:...], [link:...])"]
     B --> C["3. Token Styles<br/>(Color & Text Styles)"]
     C --> D["4. Component Properties<br/>(Variants, Booleans, Slots)"]
     D --> E["5. Description Contracts<br/>(@component: ComponentName)"]
@@ -33,12 +33,11 @@ AI code compilers translate Figma bounding boxes directly into **Flexbox (`displ
 
 ## 2. Micro-Annotation Layer Naming Protocol
 
-Designers do not need programming knowledge. When a specific HTML element, interactivity boundary, or text truncation rule is needed, prepend standard bracketed tags directly to the layer name:
+Designers do not need programming knowledge. When a specific HTML element, interactivity boundary, event, or layout behavior is needed, prepend standard bracketed tags directly to the layer name:
 
-$$\text{Syntax: } \mathbf{[tag:\langle elem\rangle][client:\langle bool\rangle][behavior:\langle rule\rangle]\ \text{LayerName}}$$
+$$\text{Syntax: } \mathbf{[tag:\langle elem\rangle][action:\langle act\rangle][link:\langle route\rangle][behavior:\langle rule\rangle]\ \text{LayerName}}$$
 
-### Common Layer Tag Cheatsheet:
-
+### A. Semantic HTML Elements & Interactivity
 | Layer Name in Figma | Generated Code / HTML Semantics | Purpose / Benefit |
 | :--- | :--- | :--- |
 | `[tag:h1] Hero Main Title` | `<h1 className="text-5xl font-bold">...</h1>` | Guarantees semantic heading hierarchy without AI guessing. |
@@ -50,9 +49,129 @@ $$\text{Syntax: } \mathbf{[tag:\langle elem\rangle][client:\langle bool\rangle][
 
 ---
 
-## 3. Standardized Icon & Asset Naming
+## 3. Modals, Popups & Drawers (`[modal:...]` / `[action:...]`)
 
-The asset extraction pipeline (`scripts/figma-asset-sync.mjs`) automatically scans, normalizes, and downloads assets based on prefix patterns:
+Floating modals placed on the canvas often get rendered as static inline `<div>`s instead of interactive overlays. Use these annotations:
+
+### The Trigger (Button that opens the popup):
+```text
+[tag:button][client:true][action:open-modal:cart-drawer] CartIconButton
+[tag:button][client:true][action:open-modal:quick-view-modal] QuickViewBtn
+```
+
+### The Modal / Drawer Frame:
+$$\text{Syntax: } \mathbf{[modal:dialog|drawer|toast|alert][id:\langle identifier\rangle][backdrop:blur|dark|transparent]}$$
+
+```text
+[modal:drawer][id:cart-drawer][position:right][backdrop:blur] CartDrawerOverlay
+[modal:dialog][id:quick-view-modal][position:center][backdrop:dark] QuickViewDialog
+```
+
+### Generated React / Next.js Output:
+```tsx
+"use client";
+import { useState } from "react";
+import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
+
+export function HeaderWithCart() {
+  const [isCartOpen, setIsCartOpen] = useState(false);
+
+  return (
+    <>
+      <button onClick={() => setIsCartOpen(true)} className="...">
+        <CartIcon />
+      </button>
+
+      {/* Renders in Portal with Backdrop */}
+      <Dialog open={isCartOpen} onOpenChange={setIsCartOpen}>
+        <DialogOverlay className="backdrop-blur-sm bg-black/40" />
+        <DialogContent className="fixed right-0 top-0 h-full w-[400px] ...">
+          {/* Cart Drawer Content */}
+        </DialogContent>
+      </Dialog>
+    </>
+  );
+}
+```
+
+---
+
+## 4. Navigation Links & Dynamic Routing (`[link:...]`)
+
+Generates typed **Next.js `<Link>`** components and secure external anchor tags:
+
+| Figma Layer Name | Generated Next.js Component | Behavior |
+| :--- | :--- | :--- |
+| `[link:/] HomeLink` | `<Link href="/">Home</Link>` | Client-side route transition to `/` |
+| `[link:/shop] ShopMenu` | `<Link href="/shop">Shop</Link>` | Client-side route transition to `/shop` |
+| `[link:/product/[id]] ProductItem` | `<Link href={`/product/${product.id}`}>` | Dynamic route parameter interpolation |
+| `[link:https://instagram.com][external:true] Social` | `<a href="https://..." target="_blank" rel="noopener noreferrer">` | Secure external tab opening |
+
+---
+
+## 5. Form Controls & Validation (`[form:...]` / `[input:...]`)
+
+$$\text{Syntax: } \mathbf{[input:\langle type\rangle][name:\langle field\rangle][required:\langle bool\rangle]}$$
+
+```text
+[tag:form][action:submit-checkout] CheckoutForm
+ ├── [input:text][name:firstName][required:true] FirstNameInput
+ ├── [input:email][name:email][required:true] EmailInput
+ ├── [input:tel][name:phone] PhoneInput
+ ├── [input:select][name:country] CountryDropdown
+ └── [input:number][name:quantity][min:1][max:99] QuantityStepper
+```
+
+### Generated TypeScript Interface & Form JSX:
+```tsx
+export interface CheckoutFormValues {
+  firstName: string;
+  email: string;
+  phone?: string;
+  country: string;
+}
+
+export function CheckoutForm({ onSubmit }: { onSubmit: (data: CheckoutFormValues) => void }) {
+  return (
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+      <input type="text" {...register("firstName", { required: true })} placeholder="First Name" />
+      <input type="email" {...register("email", { required: true })} placeholder="Email" />
+      <input type="tel" {...register("phone")} placeholder="Phone Number" />
+    </form>
+  );
+}
+```
+
+---
+
+## 6. Dropdowns, Menus & Tabs (`[dropdown:...]` / `[tabs:...]`)
+
+### A. Dropdown Menus:
+```text
+[dropdown:root] UserProfileMenu
+ ├── [dropdown:trigger] UserAvatarButton
+ └── [dropdown:content] MenuItemsOverlay
+      ├── [dropdown:item][link:/profile] MyProfile
+      ├── [dropdown:item][link:/orders] OrderHistory
+      └── [dropdown:item][action:logout] LogoutButton
+```
+
+### B. Tab Panels (e.g. Product Page Tabs):
+```text
+[tabs:root] ProductTabsSection
+ ├── [tabs:list] TabHeaderContainer
+ │    ├── [tabs:trigger:desc][default:true] DescriptionTab
+ │    ├── [tabs:trigger:info] AdditionalInfoTab
+ │    └── [tabs:trigger:reviews] ReviewsTab (5)
+ └── [tabs:content] TabPanels
+      ├── [tabs:panel:desc] DescriptionContentFrame
+      ├── [tabs:panel:info] AdditionalInfoContentFrame
+      └── [tabs:panel:reviews] ReviewsContentFrame
+```
+
+---
+
+## 7. Standardized Icon & Asset Naming
 
 ### Vector Icons (`.svg`):
 - Prefix vector layers with `icon/` or `ic-` (e.g. `icon/shopping-bag`, `icon/search`, `icon/heart`, `icon/filter`).
@@ -64,7 +183,7 @@ The asset extraction pipeline (`scripts/figma-asset-sync.mjs`) automatically sca
 
 ---
 
-## 4. Native Component Properties & Variants
+## 8. Native Component Properties & Variants
 
 Instead of duplicating frames to show different states, use native **Figma Component Properties** (Right Sidebar $\rightarrow$ Properties `+`):
 
@@ -81,7 +200,7 @@ Instead of duplicating frames to show different states, use native **Figma Compo
 
 ---
 
-## 5. Structured YAML in Component Descriptions
+## 9. Structured YAML in Component Descriptions
 
 When declaring a master component in Figma, add a structured YAML contract into the **Description** input (Right Sidebar $\rightarrow$ Description):
 
@@ -101,36 +220,31 @@ When declaring a master component in Figma, add a structured YAML contract into 
   hoverActions: slot
 ```
 
-**Why this matters**:
-1. It feeds directly into `engine/registry/component-registry.json`.
-2. The AI generator produces clean TypeScript interfaces matching this exact contract without prop hallucinations.
+---
+
+## 10. Design Tokens: Colors & Typography Styles
+
+- **Colors**: Use Figma **Color Styles** (e.g., `Brand/Primary`, `Neutral/Surface-Muted`, `Text/Primary`) instead of unlinked hex codes (`#B88E2F`).
+- **Typography**: Use Figma **Text Styles** (e.g., `Heading/H1`, `Body/Medium`, `Label/Small`).
 
 ---
 
-## 6. Design Tokens: Colors & Typography Styles
-
-### Colors:
-- Use Figma **Color Styles** (e.g., `Brand/Primary`, `Brand/Secondary`, `Surface/Muted`, `Text/Primary`) instead of unlinked hex codes (`#B88E2F`).
-- Maps 1-to-1 with `src/styles/tokens.css` and Tailwind classes (`bg-primary`, `text-content-primary`).
-
-### Typography:
-- Use Figma **Text Styles** (e.g., `Heading/H1`, `Body/Medium`, `Label/Small`).
-- The token auditor (`scripts/audit-tokens.mjs`) automatically maps font sizes and line heights to standard design tokens.
-
----
-
-## Quick Reference Summary Table
+## Complete Micro-Annotation Master Dictionary
 
 ```
-┌──────────────────────────────┬────────────────────────────────────────────────────────┐
-│ Requirement                  │ Designer Action in Figma                               │
-├──────────────────────────────┼────────────────────────────────────────────────────────┤
-│ Responsive Layout            │ Auto Layout (Shift+A) on all frames, cards, and rows   │
-│ Semantic Headings            │ [tag:h1] Title, [tag:h2] Subtitle, [tag:h3] CardTitle   │
-│ Interactive Hydration        │ [tag:button][client:true] ButtonName                   │
-│ Text Truncation              │ [behavior:line-clamp-2] Description, [behavior:truncate│
-│ Shared Icons                 │ icon/search, icon/cart, icon/user                      │
-│ Component Contracts          │ Add YAML block in Master Component Description         │
-│ Design Tokens                │ Link layers to Figma Color & Text Styles               │
-└──────────────────────────────┴────────────────────────────────────────────────────────┘
+┌────────────────────────────┬─────────────────────────────────┬──────────────────────────────────────────┐
+│ Category                   │ Layer Annotation Syntax         │ Code / Runtime Result                    │
+├────────────────────────────┼─────────────────────────────────┼──────────────────────────────────────────┤
+│ 🔗 Navigation              │ [link:/route]                   │ <Link href="/route">                     │
+│ 🔗 External Link           │ [link:url][external:true]       │ <a href="..." target="_blank">           │
+│ 🪟 Modals & Dialogs        │ [modal:dialog][id:name]         │ <Dialog open={open}> in React Portal     │
+│ 📦 Side Drawers            │ [modal:drawer][position:right]  │ <Sheet side="right">                     │
+│ 🔘 Modal Triggers          │ [action:open-modal:name]        │ onClick={() => setOpen(true)}            │
+│ ❌ Close Modal             │ [action:close-modal]            │ onClick={() => setOpen(false)}           │
+│ ⚡ Event Actions           │ [action:add-to-cart]            │ Wire automated event callback            │
+│ 📋 Form Controls           │ [input:email][required:true]    │ <input type="email" required />          │
+│ 🔽 Dropdown Menus          │ [dropdown:root], [dropdown:item]│ Accessible Radix DropdownMenu            │
+│ 📑 Tab Navigation          │ [tabs:root], [tabs:trigger:id]  │ Accessible Radix Tabs                    │
+│ 🔄 Responsive Breakpoints  │ [hide:mobile] or [show:desktop] │ className="hidden md:block"              │
+└────────────────────────────┴─────────────────────────────────┴──────────────────────────────────────────┘
 ```
